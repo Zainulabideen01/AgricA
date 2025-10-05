@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title>Animashaun Agricultural Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-green-800">Animashaun</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="#home" class="text-green-800 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">About</a>
+                        <a href="#services" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Services</a>
+                        <a href="#products" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Products</a>
+                        <a href="#contact" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-100 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-green-800 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#services" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#products" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="#contact" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center text-center text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-bounce-slow">From Our Fields to Your Table. Freshness Guaranteed</h1> 
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">grains and legumes are 
+                    collected at the level of optimal readiness and packaged immediately, ensuring nutrition integrity arrive with every delivery.</p>
+                <div class="space-x-4">
+                    <a href="#services" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-green-800 bg-white hover:bg-gray-100 transition-all">
+                        Our Services
+                    </a>
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-all">
+                        Contact Us
+                    </a>
+                </div>
+                <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2">
+                    <a href="#about" class="text-white animate-pulse inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">About Us</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Our Farming Philosophy
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="images/FARM/agbe.png" alt="Aerial view of sustainable farm with crop circles and lush green fields" class="rounded-lg shadow-xl">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-800 mb-4">Agricultural Practices Since 2020</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Animashaun has been at the forefront of sustainable agriculture for over 5 years. 
+                            Our family-owned farm combines traditional wisdom with cutting-edge technology to 
+                            produce high-quality crops while preserving the land for future generations.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            We believe in working with nature rather than against it, and our innovative crop rotation systems and water conservation techniques have been recognized by agricultural experts worldwide.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Certified consultant</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Sustainable Irrigation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Modern fertilization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Why Choose Us</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Innovative Agricultural Solutions
+                </p>
+            </div>
+
+            <div class="mt-10">
+                 <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card bg-white p-8 rounded-lg shadow-md transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                            <i class="fas fa-water text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Smart Irrigation</h3>
+                        <p class="text-gray-600">
+                            Our precision irrigation systems use 40% less water while improving crop yields through soil moisture monitoring and automated watering.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card bg-white p-8 rounded-lg shadow-md transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                            <i class="fas fa-seedling text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Organic Practices</h3>
+                        <p class="text-gray-600">
+                            We use only natural pest control methods and organic fertilizers to produce healthier crops without harmful chemicals.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card bg-white p-8 rounded-lg shadow-md transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                            <!-- <i class="fas fa-robot text-xl">H</i> -->
+                             <p>H</p>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Halal Farm Product</h3>
+                        <p class="text-gray-600">
+                            product are harvested from properly pest controlled crops, with cleans source of funds and trustworthiness.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card bg-white p-8 rounded-lg shadow-md transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                            <i class="fas fa-solar-panel text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Renewable Energy</h3>
+                        <p class="text-gray-600">
+                            Our farm runs on 100% clean and renewable energy from solar energy system.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card bg-white p-8 rounded-lg shadow-md transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                            <i class="fas fa-tractor text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Modern Equipment</h3>
+                        <p class="text-gray-600">
+                            We use the latest farm machinery with GPS guidance and precision planting for maximum efficiency.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card bg-white p-8 rounded-lg shadow-md transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                            <i class="fas fa-truck text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Local Distribution</h3>
+                        <p class="text-gray-600">
+                            Our produce reaches local markets within hours of harvest, ensuring maximum freshness for consumers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Our Harvest</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Farm Fresh Products
+                </p>
+            </div>
+            <div class="mt-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                     <% HomePictures.forEach(product => { %>
+
+                        <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1">
+                            <div class="h-64 md:h-72 lg:h-80 w-full overflow-hidden bg-gray-100">
+                         <% if (product.images && product.images.length > 0) { %>
+
+                                <img src="<%= product.images[0] %>" alt="<%= product.name %>" class="w-full h-full object-cover hover:scale-105 transition-all duration-500">
+
+                            <% } %>
+                          
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2"><%= product.name %></h3>
+                                <p class="text-gray-600 mb-4"><%= product.description %></p>
+                                <div class="flex justify-between items-center">
+                                    <a href="/product/<%= product.id %>" class="text-green-600 hover:underline">
+                                    <button>Read More</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                       <% }) %>
+                     
+
+                    </div>
+                <div class="mt-12 text-center">
+                <a href="/productSection" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-all">
+                        View All Products
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+           </div>
+
+
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-green-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-300 font-semibold tracking-wide uppercase">What We Offer</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
+                    Our Farming Services
+                </p>
+            </div>
+
+            <div class="mt-12">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-green-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-tractor text-green-300 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Farm Consulting</h3>
+                        </div>
+                        <p class="text-green-100">
+                            Our agricultural experts provide customized consulting for small and large farms looking to improve yields or transition to organic practices.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-seedling text-green-300 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Soil Analysis</h3>
+                        </div>
+                        <p class="text-green-100">
+                            Comprehensive soil testing and amendment recommendations to optimize fertility and structure for your specific crops.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-water text-green-300 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Irrigation Installation</h3>
+                        </div>
+                        <p class="text-green-100">
+                            Design and installation of water-efficient drip and sprinkler systems tailored to your land and crops.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-cow text-green-300 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Livestock Management</h3>
+                        </div>
+                        <p class="text-green-100">
+                            Holistic grazing plans and livestock health services for herds of all sizes using humane, natural methods.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-leaf text-green-300 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Co-packing</h3>
+                        </div>
+                        <p class="text-green-100">
+                            From Farm Ingredient to Retail Product.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-sun text-green-300 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Farm Tours & Education</h3>
+                        </div>
+                        <p class="text-green-100">
+                            On-site educational programs for schools, families, and professional farmers showcasing sustainable practices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">What People Say</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Testimonials
+                </p>
+            </div>
+
+            <div class="mt-12">
+                 <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/32214451-0d3d-4969-8f8f-4fe26d29e2eb.png" alt="Portrait of happy middle-aged female farmer in hat" class="w-12 h-12 rounded-full object-cover">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-gray-900">Sukurat Adufe</h4>
+                                <p class="text-green-600 text-sm">Farmer</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Animashaun farm transformed our struggling farm. Their soil analysis and irrigation recommendations increased our yield by 60% while reducing water usage."
+                        </p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ad53888b-81cf-41cc-87d3-e835e9da9fd9.png" alt="Portrait of senior male chef in white apron" class="w-12 h-12 rounded-full object-cover">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-gray-900">Mr. Akande</h4>
+                                <p class="text-green-600 text-sm">Wholesaler</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "The quality and level of nutrition integrity of Animashaun's produce is unmatched. Our customers rave about the wheat and soya bean, and we appreciate their reliable deliveries."
+                        </p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c7827ce5-f931-4c10-8d68-ffb4ea49cc44.png" alt="Portrait of young female environmental scientist" class="w-12 h-12 rounded-full object-cover">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-gray-900">Hajarah Amope</h4>
+                                <p class="text-green-600 text-sm">Sustainability Advocate</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "As an environmental scientist, I'm impressed by Animashaun' commitment to sustainable practices. They're setting an example for agriculture's future."
+                        </p>
+                        <div class="mt-4 flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Latest Blog Posts</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="images/blog1.jpg" alt="Blog Post 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Sustainable Farming Practices</h3>
+                    <p class="text-gray-600 mb-4">Learn about the latest sustainable farming techniques that can help you maximize your yield while protecting the environment.</p>
+                    <a href="blogPost.html" class="text-green-600 hover:underline">Read More</a>
+                </div>
+            </div>
+            <!-- Add more blog posts similarly -->
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">
+                        Have questions about our farming methods or products? Interested in a farm tour or consulting services? We'd love to hear from you!
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Farm Address</h3>
+                                <p class="text-sm text-gray-600">1248 Ogbooro Road, Sango saki</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Call Us</h3>
+                                <p class="text-sm text-gray-600">+234-9077-668-850</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Email Us</h3>
+                                <p class="text-sm text-gray-600">info@Animashaun.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Farm Stand Hours</h3>
+                                <p class="text-sm text-gray-600">Monday-Saturday: 9AM-5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white shadow-lg rounded-lg p-8">
+                        <form id="contactForm">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                    <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500">
+                                        <option value="general">General Inquiry</option>
+                                        <option value="farm-tour">Farm Tour</option>
+                                        <option value="consulting">Consulting Services</option>
+                                        <option value="wholesale">Wholesale Order</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"></textarea>
+                                </div>
+                                
+                                <div>
+                                    <button type="submit" class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-all">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 py-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-leaf text-green-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Animashaun</span>
+                    </div>
+                    <p class="text-green-200 text-sm">
+                        Sustainable farming solutions for a healthier planet and more nutritious food.
+                    </p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-green-200 hover:text-white transition-all">Home</a></li>
+                        <li><a href="#about" class="text-green-200 hover:text-white transition-all">About Us</a></li>
+                        <li><a href="#services" class="text-green-200 hover:text-white transition-all">Services</a></li>
+                        <li><a href="#products" class="text-green-200 hover:text-white transition-all">Products</a></li>
+                        <li><a href="#contact" class="text-green-200 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Farm Consulting</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Soil Analysis</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Irrigation Installation</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Livestock Management</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Farm Tours</a></li>
+                    </ul>
+                </div>
+                
+                <!-- <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-green-200 text-sm mb-4">
+                        Subscribe to our newsletter for farming tips, seasonal recipes, and farm events.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-r-md transition-all">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div> -->
+                
+            </div>
+            
+            <div class="border-t border-green-800 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-green-300 text-sm mb-4 md:mb-0">
+                        © 2025 Animashaun. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-green-300 hover:text-white text-sm transition-all">Privacy Policy</a>
+                        <a href="#" class="text-green-300 hover:text-white text-sm transition-all">Terms of Service</a>
+                        <a href="#" class="text-green-300 hover:text-white text-sm transition-all">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" class="fixed bottom-4 right-4 bg-green-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

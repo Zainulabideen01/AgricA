@@ -1,0 +1,55 @@
+[
+  {
+    "id":1,
+    "name": "WHEAT",
+    "images": [
+      "/images/product/wheat/wheat-field.jpg",
+      "/images/product/wheat/wheat.green.jpg",
+      "/images/product/wheat/wheat-field.jpg",
+      "/images/product/wheat/wheat.green.jpg",
+      "/images/product/wheat/wheat-field.jpg",
+      "/images/product/wheat/wheat.green.jpg"
+    ],
+    "description": "Wheat is a cereal grain used worldwide for making bread, pasta, and more.",
+    "first_Description": "Our sustainable agriculture project focuses on implementing eco-friendly farming techniques to increase crop yields while preserving natural resources. Using a combination of traditional wisdom and modern technology, we're creating a model for farms of the future.",
+    "second_Description": "The project integrates precision agriculture technologies with organic farming principles. We've developed a system that monitors soil health in real-time, optimizing water usage and nutrient delivery to crops. This reduces waste while maximizing productivity.",
+    "third_Description": "Our experimental plots have shown a 30% increase in yield compared to traditional methods, while using 40% less water. The system is particularly effective for small to medium-sized farms, making it accessible to family-run operations.",
+    "four_Description": "Community involvement is key to our mission. We conduct regular workshops to train local farmers in these techniques, ensuring the knowledge spreads throughout the region. Our goal is to create a network of sustainable farms that can serve as examples for the entire agricultural sector."
+  },
+  {
+    "id": 2,
+    "name": "TOMATO",
+    "content": "Small content about this",
+    "images": [
+      "/images/product/tomato/tomato-1.jpg",
+      "/images/product/tomato/tomato-2.jpg",
+      "/images/product/tomato/tomato-3.jpg",
+      "/images/product/tomato/tomato-4.png",
+      "/images/product/tomato/tomato-5.jpg",
+      "/images/product/tomato/tomato-1.jpg"
+    ],
+    "description": "Tomato is a staple food for over half the world's population.",
+    "first_Description": "Our sustainable agriculture project focuses on implementing eco-friendly farming techniques to increase crop yields while preserving natural resources. Using a combination of traditional wisdom and modern technology, we're creating a model for farms of the future.",
+    "second_Description": "The project integrates precision agriculture technologies with organic farming principles. We've developed a system that monitors soil health in real-time, optimizing water usage and nutrient delivery to crops. This reduces waste while maximizing productivity.",
+    "third_Description": "Our experimental plots have shown a 30% increase in yield compared to traditional methods, while using 40% less water. The system is particularly effective for small to medium-sized farms, making it accessible to family-run operations.",
+    "four_Description": "Community involvement is key to our mission. We conduct regular workshops to train local farmers in these techniques, ensuring the knowledge spreads throughout the region. Our goal is to create a network of sustainable farms that can serve as examples for the entire agricultural sector."
+  },
+  {
+    "id": 3,
+    "name": "SOYA BEANS",
+    "content": "Small content about this",
+    "images": [
+      "/images/product/soybeans/soybean2.jpg",
+      "/images/product/soybeans/soybean2.jpg",
+      "/images/product/soybeans/soybean2.jpg",
+      "/images/product/soybeans/soybean2.jpg",
+      "/images/product/soybeans/soybean2.jpg",
+      "/images/product/soybeans/soybean2.jpg"
+    ],
+    "description": "Soya beans is a cereal grain used worldwide for making bread, pasta, and more.",
+    "first_Description": "Our sustainable agriculture project focuses on implementing eco-friendly farming techniques to increase crop yields while preserving natural resources. Using a combination of traditional wisdom and modern technology, we're creating a model for farms of the future.",
+    "second_Description": "The project integrates precision agriculture technologies with organic farming principles. We've developed a system that monitors soil health in real-time, optimizing water usage and nutrient delivery to crops. This reduces waste while maximizing productivity.",
+    "third_Description": "Our experimental plots have shown a 30% increase in yield compared to traditional methods, while using 40% less water. The system is particularly effective for small to medium-sized farms, making it accessible to family-run operations.",
+    "four_Description": "Community involvement is key to our mission. We conduct regular workshops to train local farmers in these techniques, ensuring the knowledge spreads throughout the region. Our goal is to create a network of sustainable farms that can serve as examples for the entire agricultural sector."
+  }
+]

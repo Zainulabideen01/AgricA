@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title><%= product.name %> - Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+  <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+<body class="font-sans">
+
+  <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-green-800">Animashaun</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="/" class="text-green-800 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Home</a>
+                        <a href="#feature" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Feature</a>
+                        <a href="#gallery" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Gallery</a>
+                        <a href="#team" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Team</a>
+                        <a href="#contact" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-all">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-100 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-green-800 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#feature" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Feature</a>
+                <a href="#gallery" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
+                <a href="#team" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Team</a>
+                <a href="#contact" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-18">
+        <div class="h-96 bg-theme-green flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Sustainable Farming Initiative</h1>
+                <p class="text-xl text-white opacity-90 max-w-2xl mx-auto">Revolutionizing agriculture through innovative techniques and community engagement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        
+        <!-- Project Overview -->
+        <section id="overview" class="mb-16">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="flex-1">
+                    <h2 class="text-3xl font-bold theme-green mb-6">About Our Project</h2>
+
+                    <p class="text-gray-700 mb-4 justify-content"><%= product.first_Description %></p>
+                    
+                    <div class="read-more-content" id="projectDetails">
+                        <p class="text-gray-700 mb-4"><%= product.second_Description %></p>
+                        <p class="text-gray-700 mb-4"><%= product.third_Description %></p>
+                        <p class="text-gray-700"><%= product.four_Description %></p>
+                    </div>
+
+                    <button 
+                        onclick="toggleReadMore('projectDetails')" class="mt-4 px-6 py-2 border-2 border-theme-green theme-green rounded-full hover:bg-theme-green hover:text-white transition-colors">Read More
+                    </button>
+                    
+                </div>
+
+                <div class="flex-1" style="display: flex;flex-wrap: wrap; gap: 15px; ">
+
+           
+                    <!-- <img src="../images/wheat-2.png" alt=""  style="width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 80px rgba(17, 15, 15, 0.2);" class="h-auto rounded-lg shadow-md mb-4"> -->
+
+                       <% if (product.images && product.images.length > 0) { %>
+
+                            <img src="<%= product.images[3] %>" alt="<%= product.name %>" style="width: auto; height: auto; border-radius: 8px; box-shadow: 0 2px 80px rgba(17, 15, 15, 0.2);" class="h-auto rounded-lg shadow-md mb-4">
+
+                        <% } else { %>
+                         <p>No images available for this product.</p>
+                    <% } %>
+      
+                </div>
+            </div>
+        </section>
+
+
+      
+
+
+        <!-- Key Features -->
+        <section id="feature" class="mb-16">
+            <h2 class="text-3xl font-bold theme-green mb-8 text-center">Innovative Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-4xl theme-green mb-4">🌱</div>
+                    <h3 class="font-bold text-xl mb-2">Soil Health Monitoring</h3>
+                    <p class="text-gray-700">
+                        Real-time sensors track moisture, pH, and nutrient levels, allowing precise adjustments to soil conditions.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-4xl theme-green mb-4">💧</div>
+                    <h3 class="font-bold text-xl mb-2">Smart Irrigation</h3>
+                    <p class="text-gray-700">
+                        Automated drip irrigation systems deliver water directly to plant roots based on actual need.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-4xl theme-green mb-4">🌿</div>
+                    <h3 class="font-bold text-xl mb-2">Crop Diversity</h3>
+                    <p class="text-gray-700">
+                        We cultivate multiple crop varieties to enhance biodiversity and reduce pest pressure naturally.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- Gallery -->
+        <section id="gallery" class="mb-16">
+            <h2 class="text-3xl font-bold theme-green mb-8 text-center">Project In Action</h2>
+            <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> -->
+                <div class="overflow-hidden rounded-lg shadow-md product-image-grid row">
+                    <% if (product.images && product.images.length > 0) { %>
+                        <% product.images.forEach(image => {%>
+
+                        <img src="<%= image %>" alt="<%= product.name %>" class="product-image">
+                        <% }); %>
+                    <% } else { %>
+                        <p>No images available for this product.</p>
+                    <% } %>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- Stats -->
+        <section class="mb-16 bg-theme-green text-white py-12 px-6 rounded-lg">
+            <h2 class="text-3xl font-bold mb-8 text-center">Project Impact</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">30%</div>
+                    <div>Increase in Crop Yield</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">40%</div>
+                    <div>Less Water Usage</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">250+</div>
+                    <div>Farmers Trained</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">100%</div>
+                    <div>Organic Practices</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="team" class="mb-16">
+            <h2 class="text-3xl font-bold theme-green mb-8 text-center">Our Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-theme-green">
+                        <img src="" alt="Senior agricultural scientist with graying hair and glasses standing in a greenhouse" class="w-full h-full object-cover"> 
+                    </div>
+                    <h3 class="font-bold text-xl">Dr. Abdulsalam</h3>
+                    <p class="text-gray-600 mb-2">Lead Agricultural Scientist</p>
+                    <p class="text-gray-700 text-sm">
+                        Specializes in soil ecology and sustainable farming systems with 15 years of experience.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-theme-green">
+                        <img src="" alt="Young male engineer holding a drone in a field with technology prototype in hand" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-xl">AbdulRahman Ismail</h3>
+                    <p class="text-gray-600 mb-2">Technology Director</p>
+                    <p class="text-gray-700 text-sm">
+                        Develops precision agriculture tools and IoT solutions for farm monitoring.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-theme-green">
+                        <img src="" alt="Middle-aged woman with sun hat and warm smile holding freshly harvested vegetables" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-xl">Amina Ismail</h3>
+                    <p class="text-gray-600 mb-2">Field Operations Manager</p>
+                    <p class="text-gray-700 text-sm">
+                        Oversees daily farm operations and community outreach programs.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-theme-green">
+                        <img 
+                            src="" alt="Business professional analyzing data on tablet while standing near farm equipment" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-xl">Robiu Naheem</h3>
+                    <p class="text-gray-600 mb-2">Sustainability Analyst</p>
+                    <p class="text-gray-700 text-sm">
+                        Measures project impact and develops sustainability metrics and reporting.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+        <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">
+                        Have questions about our farming methods or products? Interested in a farm tour or consulting services? We'd love to hear from you!
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Farm Address</h3>
+                                <p class="text-sm text-gray-600">1248 Ogbooro Road, Sango saki</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Call Us</h3>
+                                <p class="text-sm text-gray-600">+234-9077-668-850</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Email Us</h3>
+                                <p class="text-sm text-gray-600">info@Animashaun.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-green-600 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-bold text-gray-900">Farm Stand Hours</h3>
+                                <p class="text-sm text-gray-600">Monday-Saturday: 9AM-5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white shadow-lg rounded-lg p-8">
+                        <form id="contactForm">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                    <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500">
+                                        <option value="general">General Inquiry</option>
+                                        <option value="farm-tour">Farm Tour</option>
+                                        <option value="consulting">Consulting Services</option>
+                                        <option value="wholesale">Wholesale Order</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"></textarea>
+                                </div>
+                                
+                                <div>
+                                    <button type="submit" class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-all">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 py-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-leaf text-green-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Animashaun</span>
+                    </div>
+                    <p class="text-green-200 text-sm">
+                        Sustainable farming solutions for a healthier planet and more nutritious food.
+                    </p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-green-300 hover:text-white">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-green-200 hover:text-white transition-all">Home</a></li>
+                        <li><a href="#feature" class="text-green-200 hover:text-white transition-all">Feature</a></li>
+                        <li><a href="#gallery" class="text-green-200 hover:text-white transition-all">Gallery</a></li>
+                        <li><a href="#team" class="text-green-200 hover:text-white transition-all">Team</a></li>
+                        <li><a href="#contact" class="text-green-200 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Farm Consulting</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Soil Analysis</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Irrigation Installation</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Livestock Management</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition-all">Farm Tours</a></li>
+                    </ul>
+                </div>
+                
+                <!-- <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-green-200 text-sm mb-4">
+                        Subscribe to our newsletter for farming tips, seasonal recipes, and farm events.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-r-md transition-all">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div> -->
+                
+            </div>
+            
+            <div class="border-t border-green-800 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-green-300 text-sm mb-4 md:mb-0">
+                        © 2025 Animashaun. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-green-300 hover:text-white text-sm transition-all">Privacy Policy</a>
+                        <a href="#" class="text-green-300 hover:text-white text-sm transition-all">Terms of Service</a>
+                        <a href="#" class="text-green-300 hover:text-white text-sm transition-all">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" class="fixed bottom-4 right-4 bg-green-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+           // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+
+        // Smooth Scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Hide mobile menu after clicking a link
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+
+        // toggle Read More Section
+
+  function toggleReadMore(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('expanded');
+            const button = event.target;
+            if (content.classList.contains('expanded')) {
+                button.textContent = 'Read Less';
+            } else {
+                button.textContent = 'Read More';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
