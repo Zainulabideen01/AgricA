@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "WHEAT",
+    "slug": "wheat",
     "images": [
       "/images/product/wheat/wheat-field.jpg",
       "/images/product/wheat/wheat.green.jpg",
@@ -19,6 +20,7 @@
   {
     "id": 2,
     "name": "TOMATO",
+    "slug":"tomato",
     "content":"Small content about this",
     "images": [
       "/images/product/tomato/tomato-1.jpg",
@@ -37,6 +39,7 @@
   {
     "id": 3,
     "name": "SOYA BEANS",
+    "slug": "soya_bean",
      "content":"Small content about this",
     "images": [
       "/images/product/soybeans/soybean2.jpg",
@@ -55,6 +58,7 @@
   {
     "id": 4,
     "name": "BANANA",
+    "slug": "banana",
      "content":"Small content about this",
     "images": [
       "/images/product/banana/banana.jpg",
@@ -73,6 +77,7 @@
   {
     "id": 5,
     "name": "BEAN LEAF",
+    "slug": "bean_leaf",
      "content":"Small content about this",
     "images": [
       "/images/product/bean-leaf/bean-leaf.jpg",
@@ -91,6 +96,7 @@
   {
     "id": 6,
     "name": "BEES",
+    "slug": "bees",
      "content":"Small content about this",
     "images": [
       "/images/product/bees/bees.jpg",
@@ -109,6 +115,7 @@
   {
     "id": 7,
     "name": "CORN",
+    "slug": "corn",
      "content":"Small content about this",
     "images": [
       "/images/product/corn/corn-1.jpg",
@@ -130,6 +137,7 @@
   {
     "id": 8,
     "name": "GINGER",
+    "slug": "ginger",
      "content":"Small content about this",
     "images": [
       "/images/product/ginger/ginger-1.jpg",
@@ -148,6 +156,7 @@
   {
     "id": 9,
     "name": "HONEY JAR",
+    "slug": "honey_jar",
      "content":"Small content about this",
     "images": [
       "/images/product/honey-jar/honey-jar.jpg",
@@ -166,6 +175,7 @@
   {
     "id": 10,
     "name": "MAIZE",
+    "slug": "maize",
      "content":"Small content about this",
     "images": [
       "/images/product/maize/maize.jpg",

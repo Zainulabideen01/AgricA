@@ -2,6 +2,7 @@
   {
     "id":1,
     "name": "WHEAT",
+    "slug": "wheat",
     "images": [
       "/images/product/wheat/wheat-field.jpg",
       "/images/product/wheat/wheat.green.jpg",
@@ -19,6 +20,7 @@
   {
     "id": 2,
     "name": "TOMATO",
+    "slug": "tomato",
     "content": "Small content about this",
     "images": [
       "/images/product/tomato/tomato-1.jpg",
@@ -37,6 +39,7 @@
   {
     "id": 3,
     "name": "SOYA BEANS",
+    "slug": "soya_bean",
     "content": "Small content about this",
     "images": [
       "/images/product/soybeans/soybean2.jpg",

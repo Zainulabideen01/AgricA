@@ -33,13 +33,15 @@ app.get("/productSection", (req, res) => {
 });
 
 // --- Product details ---
-app.get("/product/:id", (req, res) => {
+app.get("/product/:slug", (req, res) => {
   const homeProducts = loadHomeProducts();
   const ourProducts = loadOurProducts();
-  const id = parseInt(req.params.id);
+  // const id = parseInt(req.params.id);
+  const slug_name = req.params.slug;
+  // console.log(slug_name);
   
   // find product in either JSON file
-  let product = homeProducts.find(p => p.id === id) || ourProducts.find(p => p.id === id);
+  let product = homeProducts.find(p => p.slug === slug_name) || ourProducts.find(p => p.slug === slug_name);
 
   if (!product) {
     return res.render("404.ejs");
