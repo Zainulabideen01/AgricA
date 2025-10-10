@@ -1,6 +1,16 @@
 import fs from "fs";
 import express from "express";
 import bodyParser from "body-parser";
+import favicon from 'serve-favicon';
+import path from 'path';
+
+
+
+
+// Use import.meta.url to calculate __dirname equivalent in ES Modules
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 
 const app = express();
 // const port = 5000;
@@ -14,6 +24,10 @@ const port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// this line, replaces 'path/to/your/favicon.ico'
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 
 
 function loadOurProducts() {
@@ -71,4 +85,5 @@ app.get("/product/:slug", (req, res) => {
 // });
 
 // Export the app instance so Vercel can run it as a Serverless function
-module.exports = app; 
+// module.exports = app; old
+ export default app;
