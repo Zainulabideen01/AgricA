@@ -3,7 +3,12 @@ import express from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 5000;
+// const port = 5000;
+
+// Vercel will set the PORT environment variable automatically
+const port = process.env.PORT || 3000;
+
+
 
 // --- EJS and static ---
 app.set("view engine", "ejs");
@@ -61,7 +66,9 @@ app.get("/product/:slug", (req, res) => {
 });
 
 // --- Server ---
-app.listen(port, () => {
-  console.log(`✅ Server is running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`✅ Server is running on http://localhost:${port}`);
+// });
 
+// Export the app instance so Vercel can run it as a Serverless function
+module.exports = app; 
