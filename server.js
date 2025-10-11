@@ -80,15 +80,16 @@ app.get("/productSection", async (req, res) => {
 });
 
 // --- Product details ---
-app.get("/product/:slug", (req, res) => {
-  const homeProducts = loadHomeProducts();
-  const ourProducts = loadOurProducts();
-  // const id = parseInt(req.params.id);
-  const slug_name = req.params.slug;
-  // console.log(slug_name);
+app.get("/product/:slug", async (req, res) => {
+  try {
+        const homeProducts =await loadHomeProducts();
+        const ourProducts = await loadOurProducts();
+       // const id = parseInt(req.params.id);
+        const slug_name = req.params.slug;
+       // console.log(slug_name);
   
-  // find product in either JSON file
-  let product = homeProducts.find(p => p.slug === slug_name) || ourProducts.find(p => p.slug === slug_name);
+       // find product in either JSON file
+        let product = homeProducts.find(p => p.slug === slug_name) || ourProducts.find(p => p.slug === slug_name);
 
   if (!product) {
     return res.render("404.ejs");
@@ -102,7 +103,13 @@ app.get("/product/:slug", (req, res) => {
     product.images = [];
   }
 
+  
+  } catch (error) {
+        console.error("Error reading HomeProductData.json:", error);
+          return []; 
 
+  }
+  
 
   res.render("agriculture_project_ReadMore.ejs", { product });
 });
