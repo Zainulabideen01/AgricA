@@ -34,12 +34,19 @@ app.set("view engine", "ejs");
 
 
 function loadOurProducts() {
-  return JSON.parse(fs.readFileSync("OurProductData.json", "utf8"));
-  // return our_Product;
+  const dataPath = path.join(__dirname, "OurProductData.json");
+  const data = fs.readFileSync(dataPath, "utf8");
+  return JSON.parse(data);
+  
 } 
 function loadHomeProducts() {
   // return home_Product;
-  return JSON.parse(fs.readFileSync("HomeProductData.json", "utf8"));
+  const dataPath = path.join(__dirname, "HomeProductData.json");
+  const data = fs.readFileSync(dataPath, "utf-8");
+  return JSON.parse(data);
+
+  //single line of the above broken line
+ // return JSON.parse(fs.readFileSync((path.join(__dirname, "HomeProductData.json") ), "utf-8"));
 } 
 
 // --- Routes ---
