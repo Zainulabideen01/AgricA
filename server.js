@@ -1,5 +1,5 @@
-// import fs from "fs";    works but the system is more slower compare to the below
-import {promises as fs} from 'fs';
+import fs from "fs";    
+// import {promises as fs} from 'fs';
 import express from "express";
 import bodyParser from "body-parser";
 import favicon from 'serve-favicon';
@@ -35,55 +35,40 @@ app.set("view engine", "ejs");
 
 
 // LOAD OUR PRODUCT FUNCTION
-export async function loadOurProducts() {
-  try {
+function loadOurProducts() {
    const dataPath = path.join(__dirname, "OurProductData.json");
    const data = fs.readFileSync(dataPath, "utf8");
    return JSON.parse(data);
-
-  } catch (error) {
-    console.error("Error reading OurProductData.json:", error);
-    return []; // or null, depending on what you expect
-
-  }
   
 } 
 
 //LOAD HOME-PRODUCT FUNCTION using ASYNC for fs promises (faster loading)
-export async function loadHomeProducts() {
-  try {
+function loadHomeProducts() {
       const dataPath = path.join(__dirname, "HomeProductData.json");
-      const data = await fs.readFileSync(dataPath, "utf-8");
+      const data =  fs.readFileSync(dataPath, "utf-8");
       return JSON.parse(data);
-
-        //single line of the above broken line
+     
+      //single line of the above broken line
       // return JSON.parse(fs.readFileSync((path.join(__dirname, "HomeProductData.json") ), "utf-8"));
-
-  } catch (error) {
-      console.error("Error reading OurProductData.json:", error);
-      return []; // or null, depending on what you expect
-  }
-  
-
 } 
 
 // --- Routes ---
-app.get("/", async (req, res) => {
+app.get("/",  (req, res) => {
   // always load fresh data (in case JSON changed)
-  const HomePictures = await loadHomeProducts();
+  const HomePictures = loadHomeProducts();
   res.render("index.ejs", { HomePictures });
 });
 
-app.get("/productSection", async (req, res) => {
-  const OurPictures = await loadOurProducts();
+app.get("/productSection", (req, res) => {
+  const OurPictures = loadOurProducts();
   res.render("productSection.ejs", { OurPictures });
 });
 
 // --- Product details ---
-app.get("/product/:slug", async (req, res) => {
-  try {
-        const homeProducts =await loadHomeProducts();
-        const ourProducts = await loadOurProducts();
+app.get("/product/:slug", (req, res) => {
+  
+        const homeProducts = loadHomeProducts();
+        const ourProducts =  loadOurProducts();
        // const id = parseInt(req.params.id);
         const slug_name = req.params.slug;
        // console.log(slug_name);
@@ -102,15 +87,7 @@ app.get("/product/:slug", async (req, res) => {
   if (!product.images) {
     product.images = [];
   }
-
   
-  } catch (error) {
-        console.error("Error reading HomeProductData.json:", error);
-          return []; 
-
-  }
-  
-
   res.render("agriculture_project_ReadMore.ejs", { product });
 });
 
