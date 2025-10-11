@@ -7,13 +7,12 @@ import { fileURLToPath } from 'url';
 
 
 
-
+const app = express();
 // Use import.meta.url to calculate __dirname 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-const app = express();
 // const port = 5000;
 
 // Vercel will set the PORT environment variable automatically
@@ -30,6 +29,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon_io", 'favicon.
 
 
 // --- EJS and static ---
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 
