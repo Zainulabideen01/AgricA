@@ -42,7 +42,7 @@ export async function loadOurProducts() {
    return JSON.parse(data);
 
   } catch (error) {
-    console.error("Error reading OurProductData.json:", err);
+    console.error("Error reading OurProductData.json:", error);
     return []; // or null, depending on what you expect
 
   }
@@ -60,7 +60,7 @@ export async function loadHomeProducts() {
       // return JSON.parse(fs.readFileSync((path.join(__dirname, "HomeProductData.json") ), "utf-8"));
 
   } catch (error) {
-      console.error("Error reading OurProductData.json:", err);
+      console.error("Error reading OurProductData.json:", error);
       return []; // or null, depending on what you expect
   }
   
