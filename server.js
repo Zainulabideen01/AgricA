@@ -3,13 +3,14 @@ import express from "express";
 import bodyParser from "body-parser";
 import favicon from 'serve-favicon';
 import path from 'path';
-
-
-
-
-// Use import.meta.url to calculate __dirname equivalent in ES Modules
 import { fileURLToPath } from 'url';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+
+
+
+// Use import.meta.url to calculate __dirname 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 const app = express();
@@ -20,14 +21,16 @@ const port = process.env.PORT || 3000;
 
 
 
-// --- EJS and static ---
-app.set("view engine", "ejs");
+//Middleware
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+// the line below, replaces 'path/to/your/favicon.ico'
+app.use(favicon(path.join(__dirname, "public", "images", "favicon_io", 'favicon.ico')));
 
-// this line, replaces 'path/to/your/favicon.ico'
-app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+
+// --- EJS and static ---
+app.set("view engine", "ejs");
 
 
 function loadOurProducts() {
