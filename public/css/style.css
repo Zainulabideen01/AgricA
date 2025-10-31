@@ -40,11 +40,21 @@
         }
 
 
+        /* FRONT PAGE TEXT  */
+
+        .leading-relaxed, .feature_text{
+            text-align: justify;
+        }
+
         /* ReadMore Section */
+        .first_Description{
+            text-align: justify;
+        }
           .read-more-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
+            text-align: justify;
         }
         .read-more-content.expanded {
             max-height: 1000px;
