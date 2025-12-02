@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import favicon from 'serve-favicon';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import nodemailer from "nodemailer";
 
 
 
@@ -18,6 +19,20 @@ const __dirname = path.dirname(__filename);
 
 // Vercel will set the PORT environment variable automatically
 const port = process.env.PORT || 3000;
+
+
+// FOR NODEMAIL CONFIG 
+const COMPANY_EMAIL = process.env.COMPANY_EMAIL; 
+const SENDER_EMAIL = process.env.SENDER_EMAIL; 
+const SENDER_PASSWORD = process.env.SENDER_PASSWORD; 
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // Use your email provider here (e.g., 'outlook', 'SendGrid', or use 'smtp')
+  auth: {
+    user: SENDER_EMAIL,
+    pass: SENDER_PASSWORD,
+  },
+});
 
 
 
@@ -90,6 +105,58 @@ app.get("/product/:slug", (req, res) => {
   
   res.render("agriculture_project_ReadMore.ejs", { product });
 });
+
+
+
+// CONTACT FORM SUBMIT HANDLER 
+
+app.post("/contactForm", (req, res)=>{
+
+  // 1. Extract Data from the Form Body
+    const { name, email, phone, subject, message } = req.body;
+
+    // 2. Simple Data Validation
+    if (!name || !email || !message) {
+        // You can redirect back or send a JSON error
+        return res.status(400).send('Error: Name, email, and message are required.');
+    }
+
+    // 3. Define Email Content
+    const mailOptions = {
+        from: `Contact Form Submission <${SENDER_EMAIL}>`, // Sender's account
+        to: COMPANY_EMAIL, // Your company's recipient email
+        replyTo: email, // Allows you to reply directly to the user
+        subject: `[${subject.toUpperCase()}] New Inquiry from ${name}`,
+        html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Topic:</strong> ${subject}</p>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
+            <hr>
+            <h3>Message:</h3>
+            <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+    };
+
+    // 4. Send the Email
+    try {
+        await transporter.sendMail(mailOptions);
+        
+        // Success: Redirect the user to a "thank you" page
+        res.redirect('/thank-you'); 
+        
+    } catch (error) {
+        console.error('Nodemailer Error:', error);
+        // Failure: Redirect to an error page or render a message
+        res.status(500).render('contact', { 
+            error: 'Failed to send message. Please try again later.' 
+        });
+    }
+});
+
+
+
 
 // --- Server ---
 // app.listen(port, () => {
