@@ -4,6 +4,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import favicon from 'serve-favicon';
 import path from 'path';
+import axios from "axios";
 import { fileURLToPath } from 'url';
 import nodemailer from "nodemailer";
 
@@ -110,7 +111,7 @@ app.get("/product/:slug", (req, res) => {
 
 // CONTACT FORM SUBMIT HANDLER 
 
-app.post("/contactForm", (req, res)=>{
+app.post("/contactForm", async (req, res)=>{
 
   // 1. Extract Data from the Form Body
     const { name, email, phone, subject, message } = req.body;
