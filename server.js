@@ -115,6 +115,7 @@ app.post("/contactForm", async (req, res)=>{
 
   // 1. Extract Data from the Form Body
     const { name, email, phone, subject, message } = req.body;
+    console.log(name, email);
 
     // 2. Simple Data Validation
     if (!name || !email || !message) {
