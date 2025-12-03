@@ -40,6 +40,7 @@ const transporter = nodemailer.createTransport({
 //Middleware
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // the line below, replaces 'path/to/your/favicon.ico'
 app.use(favicon(path.join(__dirname, "public", "images", "favicon_io", 'favicon.ico')));
 
@@ -111,11 +112,13 @@ app.get("/product/:slug", (req, res) => {
 
 // CONTACT FORM SUBMIT HANDLER 
 
-app.post("/contactForm", async (req, res)=>{
+app.post("/contactForm", async(req, res)=>{
+
 
   // 1. Extract Data from the Form Body
     const { name, email, phone, subject, message } = req.body;
-    console.log(name, email);
+    // console.log("name");
+
 
     // 2. Simple Data Validation
     if (!name || !email || !message) {
