@@ -149,7 +149,8 @@ app.post("/contactForm", async(req, res)=>{
         await transporter.sendMail(mailOptions);
         
         // Success: Redirect the user to a "thank you" page
-        res.redirect('/thank-you'); 
+        // res.redirect('/thank-you');  replaced with the line below
+        return res.status(200).json({success: true, message:"message sent succesfully"});
         
     } catch (error) {
         console.error('Nodemailer Error:', error);

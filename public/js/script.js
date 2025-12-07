@@ -26,11 +26,11 @@
 
 
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    // 1. Crucial: Stop the browser from navigating/reloading the page
-    e.preventDefault(); 
+         // 1. Crucial: Stop the browser from navigating/reloading the page
+         e.preventDefault(); 
     
     // Get the form element
-    const form = e.target;
+          const form = e.target;
     
     // --- Collect and structure the form data ---
     // FormData makes it easy to grab all inputs by their 'name' attribute
